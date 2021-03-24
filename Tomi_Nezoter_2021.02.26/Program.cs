@@ -223,19 +223,16 @@ namespace Tomi_Nezoter_2021._02._26
                 {
                     if (adatok[i].foglaltsag[j] == 'x')
                     {
-                        //j++;
-                        if (o > 1)
-                        {
-                           egyedulallo += o / 2;
-                        }
+                        egyedulallo += (o / 2);
                         o = 0;
                     }
                     else
                     {
                         o++;
-                        if (j == 19 && o > 1)
+                        if (j == 19)
                         {
                             egyedulallo += o / 2;
+                            o = 0;
                         }
                     }
                 }
