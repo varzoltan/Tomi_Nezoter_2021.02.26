@@ -160,7 +160,7 @@ namespace Tomi_Nezoter_2021._02._26
                     }
                 }
                 
-                //Console.WriteLine(szamol);
+                Console.WriteLine(szamol);
 
                 leg[i - 1] = szamol;
                 //l++;
@@ -213,6 +213,34 @@ namespace Tomi_Nezoter_2021._02._26
                 Console.WriteLine($"{i} kategória = {szamol2}Ft.");
                 szamol2 = 0;
             }
+
+            //6
+            int o = 0;
+            int egyedulallo = 0;
+            for (int i = 0;i<n;i++)
+            {
+                for (int j = 0;j<adatok[i].foglaltsag.Length;j++)
+                {
+                    if (adatok[i].foglaltsag[j] == 'x')
+                    {
+                        //j++;
+                        if (o > 1)
+                        {
+                           egyedulallo += o / 2;
+                        }
+                        o = 0;
+                    }
+                    else
+                    {
+                        o++;
+                        if (j == 19 && o > 1)
+                        {
+                            egyedulallo += o / 2;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine($"6.feladat\n{egyedulallo} ilyen egyedülálló üres hely van a nézőtéren!");
             Console.ReadKey();
         }
     }
