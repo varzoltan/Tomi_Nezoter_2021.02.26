@@ -238,11 +238,35 @@ namespace Tomi_Nezoter_2021._02._26
                     }
                 }
             }
+            Console.WriteLine($"6.feladat\nAz egyedülálló helyek száma: {egyedulallo}");
 
             //7
-
+            StreamWriter ir = new StreamWriter(@"C:\Users\Rendszergazda\Downloads\szabad.txt");
+            for (int i = 0;i<n;i++)
+            {
+                for (int j =0;j<adatok[i].foglaltsag.Length;j++)
+                {
+                    if (adatok[i].foglaltsag[j] == 'x')
+                    {
+                        ir.Write("x");
+                        if (j==19)
+                        {
+                            ir.WriteLine();
+                        }
+                    }
+                    else
+                    {
+                        ir.Write(adatok[i].kategoria[j]);
+                        if (j == 19)
+                        {
+                            ir.WriteLine();
+                        }
+                    }
+                }
+            }
             
-            Console.WriteLine($"6.feladat\nAz egyedülálló helyek száma: {egyedulallo}");
+            ir.Close();
+            
             Console.ReadKey();
         }
     }
