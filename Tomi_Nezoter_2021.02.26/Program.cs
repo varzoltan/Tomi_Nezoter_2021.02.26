@@ -18,7 +18,7 @@ namespace Tomi_Nezoter_2021._02._26
         {
             //1
             Adat[] adatok = new Adat[15];
-            StreamReader olvas1 = new StreamReader(@"C:\Users\Rendszergazda\Desktop\Tomi_prog_feladat\kategoria.txt");  
+            StreamReader olvas1 = new StreamReader(@"C:\Users\Rendszergazda\Downloads\kategoria.txt");  
             int n = 0;
             while (!olvas1.EndOfStream)
             {
@@ -27,7 +27,7 @@ namespace Tomi_Nezoter_2021._02._26
                 n++;
             }
             olvas1.Close();
-            StreamReader olvas2 = new StreamReader(@"C:\Users\Rendszergazda\Desktop\Tomi_prog_feladat\foglaltsag.txt");
+            StreamReader olvas2 = new StreamReader(@"C:\Users\Rendszergazda\Downloads\foglaltsag.txt");
             int m = 0;
             while (!olvas2.EndOfStream)
             {
@@ -223,7 +223,7 @@ namespace Tomi_Nezoter_2021._02._26
                 {
                     if (adatok[i].foglaltsag[j] == 'x')
                     {
-                        egyedulallo += (o / 2);
+                        egyedulallo += o / 2;
                         o = 0;
                     }
                     else
@@ -234,10 +234,15 @@ namespace Tomi_Nezoter_2021._02._26
                             egyedulallo += o / 2;
                             o = 0;
                         }
+                        
                     }
                 }
             }
-            Console.WriteLine($"6.feladat\n{egyedulallo} ilyen egyedülálló üres hely van a nézőtéren!");
+
+            //7
+
+            
+            Console.WriteLine($"6.feladat\nAz egyedülálló helyek száma: {egyedulallo}");
             Console.ReadKey();
         }
     }
